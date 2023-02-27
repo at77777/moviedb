@@ -12,13 +12,9 @@ const MoviesList = () => {
         }, [dispatch]
     )
 
-
-
-    console.log(movies)
-
     return (
         <div>
-
+            {movies.map(movie => <MoviesListCard key={movie.id} movie={movie}/>)}
         </div>
     )
 };

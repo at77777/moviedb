@@ -3,6 +3,7 @@ import movieService from "../../services/movieService";
 
 const initialState = {
     movies: [],
+    selectedMovie: null,
     errors: null,
     loading: null
 };
@@ -24,6 +25,9 @@ const movieSlice = createSlice(
         name: 'movieSlice',
         initialState,
         reducers: {
+            setSelectedMovie: (state, action) => {
+                state.selectedMovie = action.payload
+            }
         },
         extraReducers: builder => builder
             .addCase(getMovies.fulfilled, (state, action) => {
@@ -33,12 +37,11 @@ const movieSlice = createSlice(
     }
 );
 
-
-
-const {reducer: movieReducer} = movieSlice;
+const {reducer: movieReducer, actions: {setSelectedMovie}} = movieSlice;
 
 const movieActions = {
-    getMovies
+    getMovies,
+    setSelectedMovie
 };
 
 export {

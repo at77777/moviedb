@@ -1,8 +1,13 @@
 import {MoviesList} from "../../components/MoviesList/MoviesList";
+import {GenreLibrary} from "../../components/GenreLibrary/GenreLibrary";
+import {MovieDetailsPage} from "../MovieDetailsPage/MovieDetailsPage";
 
 const MoviesPage = () => {
     return (
-        <MoviesList/>
+        <div>
+            <MoviesList/>
+
+        </div>
     )
 }
 
