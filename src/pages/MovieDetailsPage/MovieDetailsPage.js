@@ -1,12 +1,13 @@
 import {useSelector} from "react-redux";
-import {Outlet} from "react-router-dom";
+import {Outlet, useParams} from "react-router-dom";
 
 const MovieDetailsPage = () => {
+    const {movieId} = useParams();
     const {selectedMovie} = useSelector(state => state.movies);
 
     return (
         <div>
-            {selectedMovie && selectedMovie.id}
+            {selectedMovie.id}
         </div>
     )
 
